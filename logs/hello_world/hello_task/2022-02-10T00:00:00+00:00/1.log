@@ -1,0 +1,25 @@
+[2022-11-16 01:29:19,091] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: hello_world.hello_task 2022-02-10T00:00:00+00:00 [queued]>
+[2022-11-16 01:29:20,285] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: hello_world.hello_task 2022-02-10T00:00:00+00:00 [queued]>
+[2022-11-16 01:29:20,482] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2022-11-16 01:29:20,569] {taskinstance.py:1043} INFO - Starting attempt 1 of 1
+[2022-11-16 01:29:20,644] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2022-11-16 01:29:22,768] {taskinstance.py:1063} INFO - Executing <Task(PythonOperator): hello_task> on 2022-02-10T00:00:00+00:00
+[2022-11-16 01:29:23,370] {standard_task_runner.py:52} INFO - Started process 255 to run task
+[2022-11-16 01:29:23,891] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'hello_world', 'hello_task', '2022-02-10T00:00:00+00:00', '--job-id', '42', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/index.py', '--cfg-path', '/tmp/tmpp36df0tj', '--error-file', '/tmp/tmp0h2ljbpt']
+[2022-11-16 01:29:24,025] {standard_task_runner.py:77} INFO - Job 42: Subtask hello_task
+[2022-11-16 01:29:28,694] {logging_mixin.py:104} INFO - Running <TaskInstance: hello_world.hello_task 2022-02-10T00:00:00+00:00 [running]> on host 001906ffd7c9
+[2022-11-16 01:29:31,236] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=hello_world
+AIRFLOW_CTX_TASK_ID=hello_task
+AIRFLOW_CTX_EXECUTION_DATE=2022-02-10T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-02-10T00:00:00+00:00
+[2022-11-16 01:29:31,362] {logging_mixin.py:104} INFO - hi everyone
+[2022-11-16 01:29:31,425] {python.py:118} INFO - Done. Returned value was: hello world
+[2022-11-16 01:29:32,694] {taskinstance.py:1166} INFO - Marking task as SUCCESS. dag_id=hello_world, task_id=hello_task, execution_date=20220210T000000, start_date=20221116T012919, end_date=20221116T012932
+[2022-11-16 01:29:36,737] {local_task_job.py:188} WARNING - State of this instance has been externally set to success. Terminating instance.
+[2022-11-16 01:29:37,298] {process_utils.py:100} INFO - Sending Signals.SIGTERM to GPID 255
+[2022-11-16 01:29:37,401] {taskinstance.py:1239} ERROR - Received SIGTERM. Terminating subprocesses.
+[2022-11-16 01:29:37,856] {process_utils.py:66} INFO - Process psutil.Process(pid=255, status='terminated', exitcode=1, started='01:29:22') (255) terminated with exit code 1

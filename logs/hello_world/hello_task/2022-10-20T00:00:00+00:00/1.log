@@ -1,0 +1,35 @@
+[2022-11-16 01:43:58,453] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: hello_world.hello_task 2022-10-20T00:00:00+00:00 [queued]>
+[2022-11-16 01:43:59,600] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: hello_world.hello_task 2022-10-20T00:00:00+00:00 [queued]>
+[2022-11-16 01:43:59,621] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2022-11-16 01:43:59,630] {taskinstance.py:1043} INFO - Starting attempt 1 of 1
+[2022-11-16 01:43:59,639] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2022-11-16 01:44:00,082] {taskinstance.py:1063} INFO - Executing <Task(PythonOperator): hello_task> on 2022-10-20T00:00:00+00:00
+[2022-11-16 01:44:00,205] {standard_task_runner.py:52} INFO - Started process 1345 to run task
+[2022-11-16 01:44:00,313] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'hello_world', 'hello_task', '2022-10-20T00:00:00+00:00', '--job-id', '316', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/index.py', '--cfg-path', '/tmp/tmprm6bk0gw', '--error-file', '/tmp/tmpe3zhm9oe']
+[2022-11-16 01:44:00,324] {standard_task_runner.py:77} INFO - Job 316: Subtask hello_task
+[2022-11-16 01:44:01,282] {logging_mixin.py:104} INFO - Running <TaskInstance: hello_world.hello_task 2022-10-20T00:00:00+00:00 [running]> on host 001906ffd7c9
+[2022-11-16 01:44:01,826] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=hello_world
+AIRFLOW_CTX_TASK_ID=hello_task
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-20T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-10-20T00:00:00+00:00
+[2022-11-16 01:44:01,853] {taskinstance.py:1455} ERROR - run() takes 0 positional arguments but 1 was given
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1112, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1285, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1315, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/operators/python.py", line 117, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/operators/python.py", line 128, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/index.py", line 9, in hello
+    Client().run()
+TypeError: run() takes 0 positional arguments but 1 was given
+[2022-11-16 01:44:01,989] {taskinstance.py:1503} INFO - Marking task as FAILED. dag_id=hello_world, task_id=hello_task, execution_date=20221020T000000, start_date=20221116T014358, end_date=20221116T014401
+[2022-11-16 01:44:02,890] {local_task_job.py:146} INFO - Task exited with return code 1

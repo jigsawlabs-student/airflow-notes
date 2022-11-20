@@ -1,0 +1,23 @@
+[2022-11-17 23:51:02,260] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: pull_data.select_states 2022-11-16T23:50:33.202394+00:00 [queued]>
+[2022-11-17 23:51:02,394] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: pull_data.select_states 2022-11-16T23:50:33.202394+00:00 [queued]>
+[2022-11-17 23:51:02,398] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2022-11-17 23:51:02,402] {taskinstance.py:1043} INFO - Starting attempt 1 of 1
+[2022-11-17 23:51:02,404] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2022-11-17 23:51:02,461] {taskinstance.py:1063} INFO - Executing <Task(PythonOperator): select_states> on 2022-11-16T23:50:33.202394+00:00
+[2022-11-17 23:51:02,486] {standard_task_runner.py:52} INFO - Started process 111 to run task
+[2022-11-17 23:51:02,507] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'pull_data', 'select_states', '2022-11-16T23:50:33.202394+00:00', '--job-id', '352', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/index.py', '--cfg-path', '/tmp/tmp2qiktrsh', '--error-file', '/tmp/tmp0n71dn9m']
+[2022-11-17 23:51:02,522] {standard_task_runner.py:77} INFO - Job 352: Subtask select_states
+[2022-11-17 23:51:02,843] {logging_mixin.py:104} INFO - Running <TaskInstance: pull_data.select_states 2022-11-16T23:50:33.202394+00:00 [running]> on host 1d9aa7be56f4
+[2022-11-17 23:51:03,047] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=pull_data
+AIRFLOW_CTX_TASK_ID=select_states
+AIRFLOW_CTX_EXECUTION_DATE=2022-11-16T23:50:33.202394+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-11-16T23:50:33.202394+00:00
+[2022-11-17 23:51:03,109] {base.py:74} INFO - Using connection to: id: rds. Host: database-1.crd5vw1vref2.us-east-1.rds.amazonaws.com, Port: 5432, Schema: postgres, Login: postgres, Password: XXXXXXXX, extra: None
+[2022-11-17 23:51:03,489] {python.py:118} INFO - Done. Returned value was: [(34, 'New York'), (35, 'Pennsylvania'), (36, 'NY')]
+[2022-11-17 23:51:03,612] {taskinstance.py:1166} INFO - Marking task as SUCCESS. dag_id=pull_data, task_id=select_states, execution_date=20221116T235033, start_date=20221117T235102, end_date=20221117T235103
+[2022-11-17 23:51:03,809] {taskinstance.py:1220} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2022-11-17 23:51:03,891] {local_task_job.py:146} INFO - Task exited with return code 0

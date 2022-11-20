@@ -1,0 +1,27 @@
+[2022-11-16 01:33:05,250] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: hello_world.goodbye_task 2022-02-26T00:00:00+00:00 [queued]>
+[2022-11-16 01:33:08,409] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: hello_world.goodbye_task 2022-02-26T00:00:00+00:00 [queued]>
+[2022-11-16 01:33:08,539] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2022-11-16 01:33:08,614] {taskinstance.py:1043} INFO - Starting attempt 1 of 1
+[2022-11-16 01:33:08,664] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2022-11-16 01:33:10,719] {taskinstance.py:1063} INFO - Executing <Task(PythonOperator): goodbye_task> on 2022-02-26T00:00:00+00:00
+[2022-11-16 01:33:11,167] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'hello_world', 'goodbye_task', '2022-02-26T00:00:00+00:00', '--job-id', '69', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/index.py', '--cfg-path', '/tmp/tmpm3iu61xi', '--error-file', '/tmp/tmpfliz624y']
+[2022-11-16 01:33:11,205] {standard_task_runner.py:77} INFO - Job 69: Subtask goodbye_task
+[2022-11-16 01:33:10,913] {standard_task_runner.py:52} INFO - Started process 359 to run task
+[2022-11-16 01:33:14,379] {logging_mixin.py:104} INFO - Running <TaskInstance: hello_world.goodbye_task 2022-02-26T00:00:00+00:00 [running]> on host 001906ffd7c9
+[2022-11-16 01:33:15,936] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=hello_world
+AIRFLOW_CTX_TASK_ID=goodbye_task
+AIRFLOW_CTX_EXECUTION_DATE=2022-02-26T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-02-26T00:00:00+00:00
+[2022-11-16 01:33:15,953] {logging_mixin.py:104} INFO - bye all
+[2022-11-16 01:33:15,957] {python.py:118} INFO - Done. Returned value was: bye
+[2022-11-16 01:33:16,393] {taskinstance.py:1166} INFO - Marking task as SUCCESS. dag_id=hello_world, task_id=goodbye_task, execution_date=20220226T000000, start_date=20221116T013305, end_date=20221116T013316
+[2022-11-16 01:33:17,421] {taskinstance.py:1220} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2022-11-16 01:33:17,547] {local_task_job.py:188} WARNING - State of this instance has been externally set to success. Terminating instance.
+[2022-11-16 01:33:17,724] {process_utils.py:100} INFO - Sending Signals.SIGTERM to GPID 359
+[2022-11-16 01:33:18,153] {process_utils.py:66} INFO - Process psutil.Process(pid=359, status='terminated', exitcode=0, started='01:33:10') (359) terminated with exit code 0
+[2022-11-16 01:33:23,279] {taskinstance.py:845} INFO - Dependencies not met for <TaskInstance: hello_world.goodbye_task 2022-02-26T00:00:00+00:00 [success]>, dependency 'Task Instance State' FAILED: Task is in the 'success' state which is not a valid state for execution. The task must be cleared in order to be run.
+[2022-11-16 01:33:23,358] {local_task_job.py:93} INFO - Task is not able to be run

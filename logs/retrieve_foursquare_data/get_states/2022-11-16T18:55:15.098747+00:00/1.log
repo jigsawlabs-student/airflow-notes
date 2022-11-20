@@ -1,0 +1,23 @@
+[2022-11-17 18:55:39,293] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: retrieve_foursquare_data.get_states 2022-11-16T18:55:15.098747+00:00 [queued]>
+[2022-11-17 18:55:39,337] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: retrieve_foursquare_data.get_states 2022-11-16T18:55:15.098747+00:00 [queued]>
+[2022-11-17 18:55:39,338] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2022-11-17 18:55:39,340] {taskinstance.py:1043} INFO - Starting attempt 1 of 1
+[2022-11-17 18:55:39,341] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2022-11-17 18:55:39,366] {taskinstance.py:1063} INFO - Executing <Task(PythonOperator): get_states> on 2022-11-16T18:55:15.098747+00:00
+[2022-11-17 18:55:39,374] {standard_task_runner.py:52} INFO - Started process 83 to run task
+[2022-11-17 18:55:39,390] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'retrieve_foursquare_data', 'get_states', '2022-11-16T18:55:15.098747+00:00', '--job-id', '345', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/index.py', '--cfg-path', '/tmp/tmpzih6de2g', '--error-file', '/tmp/tmphv0rju1x']
+[2022-11-17 18:55:39,392] {standard_task_runner.py:77} INFO - Job 345: Subtask get_states
+[2022-11-17 18:55:39,536] {logging_mixin.py:104} INFO - Running <TaskInstance: retrieve_foursquare_data.get_states 2022-11-16T18:55:15.098747+00:00 [running]> on host 1d9aa7be56f4
+[2022-11-17 18:55:39,627] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=retrieve_foursquare_data
+AIRFLOW_CTX_TASK_ID=get_states
+AIRFLOW_CTX_EXECUTION_DATE=2022-11-16T18:55:15.098747+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-11-16T18:55:15.098747+00:00
+[2022-11-17 18:55:39,652] {base.py:74} INFO - Using connection to: id: rds. Host: database-1.crd5vw1vref2.us-east-1.rds.amazonaws.com, Port: 5432, Schema: postgres, Login: postgres, Password: XXXXXXXX, extra: None
+[2022-11-17 18:55:40,389] {python.py:118} INFO - Done. Returned value was: [(34, 'New York'), (35, 'Pennsylvania'), (36, 'NY')]
+[2022-11-17 18:55:40,479] {taskinstance.py:1166} INFO - Marking task as SUCCESS. dag_id=retrieve_foursquare_data, task_id=get_states, execution_date=20221116T185515, start_date=20221117T185539, end_date=20221117T185540
+[2022-11-17 18:55:40,548] {taskinstance.py:1220} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2022-11-17 18:55:40,598] {local_task_job.py:146} INFO - Task exited with return code 0
